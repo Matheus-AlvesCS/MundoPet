@@ -10,6 +10,8 @@ main {
       font-family: "Inter Tight", sans-serif;
       color: #f5f4f5;
       font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 0.25rem;
     }
 
     & p {
@@ -96,6 +98,39 @@ main {
   @media screen and (width >= 80rem) {
     max-width: 54.5rem;
     margin-inline: auto;
-    padding: 5rem;
+    padding: 2.5rem;
+
+    & > header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      & p {
+        margin-bottom: initial;
+      }
+    }
+
+    & .schedules-list {
+      & .period {
+        & .period-list {
+          & li {
+            padding: 1rem 0.75rem;
+            display: flex;
+            align-items: center;
+
+            & > .service {
+              display: initial;
+              margin-left: auto;
+            }
+
+            & a {
+              display: initial;
+              margin-top: initial;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+    }
   }
 }
