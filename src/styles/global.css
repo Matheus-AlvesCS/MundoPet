@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #14151d;
+  color: #98959d;
+}
+
+.logo {
+  background-color: #2e2c30;
+  padding: 0.75rem 1.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #666666;
+
+  &:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+.button {
+  background-color: #9282fa;
+  box-shadow: 0px 0px 40px rgba(146, 130, 250, 0.3);
+  border: none;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-family: "Inter Tight", sans-serif;
+  color: #050505;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #bdb4fa;
+    box-shadow: 0px 0px 40px rgba(189, 180, 250, 0.5);
+  }
+}
