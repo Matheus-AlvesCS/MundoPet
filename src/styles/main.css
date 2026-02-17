@@ -1,5 +1,4 @@
 main {
-  min-height: 100dvh;
   padding: 0.75rem 1.25rem;
   margin-top: 3.5rem;
 
@@ -58,8 +57,11 @@ main {
         gap: 1rem;
 
         & li {
-          border-bottom: 1px solid #353339;
           padding: 0.5rem;
+
+          &:has(+ li) {
+            border-bottom: 1px solid #353339;
+          }
 
           & strong {
             font:
@@ -97,8 +99,10 @@ main {
 
   @media screen and (width >= 80rem) {
     max-width: 54.5rem;
+    width: 100%;
     margin-inline: auto;
-    padding: 2.5rem;
+    padding: 2.5rem 0;
+    grid-column: 2/3;
 
     & > header {
       display: flex;

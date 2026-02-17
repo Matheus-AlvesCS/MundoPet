@@ -6,8 +6,18 @@
 }
 
 body {
+  min-height: 100dvh;
   background-color: #14151d;
   color: #98959d;
+}
+
+#app {
+  .button-container {
+    background-color: #23242c;
+    padding: 1.125rem 1.25rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -94,5 +104,33 @@ body {
 
   &:hover {
     border: 1.5px solid #86818c;
+  }
+
+  &:focus-within {
+    border: 1.5px solid #9282fa;
+
+    & > input {
+      color: #ffffff;
+    }
+  }
+}
+
+@media screen and (width >= 80rem) {
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-items: center;
+
+    & .button-container {
+      background-color: transparent;
+      padding: 0 0 2.5rem;
+      margin-top: initial;
+      text-align: initial;
+      align-self: flex-end;
+    }
+  }
+
+  .input {
+    flex: 1;
   }
 }
