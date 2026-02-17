@@ -172,6 +172,7 @@
           alt="fechar modal"
           id="closeModal"
         />
+
         <form>
           <header>
             <h2>Agende um atendimento</h2>
@@ -222,7 +223,7 @@
               </div>
             </div>
 
-            <div class="textarea-container">
+            <div class="input-container">
               <label for="service">Descrição do serviço</label>
               <textarea
                 id="service"
@@ -231,21 +232,27 @@
               ></textarea>
             </div>
 
-            <div class="input-container">
-              <label for="schedule-date">Data</label>
-              <div class="input">
-                <i
-                  ><img src="./src/assets/icons/calendar.svg" alt="calendario"
-                /></i>
-                <input type="date" id="schedule-date" name="schedule-date" />
+            <div class="inputs-row">
+              <div class="input-container">
+                <label for="schedule-date">Data</label>
+                <div class="input">
+                  <i
+                    ><img
+                      src="./src/assets/icons/calendar.svg"
+                      alt="calendario"
+                  /></i>
+                  <input type="date" id="schedule-date" name="schedule-date" />
+                </div>
               </div>
-            </div>
 
-            <div class="input-container">
-              <label for="schedule-hour">Hora</label>
-              <div class="input">
-                <i><img src="./src/assets/icons/clock.svg" alt="horário" /></i>
-                <input type="time" id="schedule-hour" name="schedule-hour" />
+              <div class="input-container">
+                <label for="schedule-hour">Hora</label>
+                <div class="input">
+                  <i
+                    ><img src="./src/assets/icons/clock.svg" alt="horário"
+                  /></i>
+                  <input type="time" id="schedule-hour" name="schedule-hour" />
+                </div>
               </div>
             </div>
           </section>

@@ -1,0 +1,151 @@
+#modal {
+  background-color: #23242c;
+  margin: auto;
+  padding: 2.5rem 1.25rem;
+  border: none;
+  border-radius: 0.75rem;
+  position: relative;
+  animation: appear 0.5s;
+
+  &.disappear {
+    animation: disappear 0.5s;
+  }
+
+  & > #closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  & form {
+    & header {
+      margin-bottom: 1.75rem;
+
+      & h2 {
+        font:
+          700 1.5rem/2rem "Inter Tight",
+          sans-serif;
+        color: #ffffff;
+        margin-bottom: 0.25rem;
+      }
+
+      & p {
+        font:
+          500 0.875rem/1.5rem "Inter",
+          sans-serif;
+        color: #98959d;
+      }
+    }
+
+    & .input-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      & label {
+        font:
+          700 0.875rem/1.5rem "Inter",
+          sans-serif;
+        color: #ffffff;
+      }
+
+      & .input {
+        width: 100%;
+      }
+
+      & > textarea {
+        background-color: transparent;
+        border: 1px solid #3e3c41;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        color: #98959d;
+        font:
+          400 1rem/1.5 "Inter",
+          sans-serif;
+        outline: none;
+        resize: none;
+
+        &::placeholder {
+          color: #98959d;
+        }
+
+        &:hover {
+          border: 1.5px solid #86818c;
+        }
+
+        &:focus {
+          border: 1.5px solid #9282fa;
+          color: #ffffff;
+        }
+      }
+
+      & + .input-container {
+        margin-top: 1rem;
+      }
+    }
+
+    & .inputs-row {
+      margin-top: 1rem;
+    }
+
+    & .button {
+      display: block;
+      margin: 1.75rem 0 0 auto;
+    }
+  }
+
+  &::backdrop {
+    backdrop-filter: blur(0.25rem);
+  }
+
+  @media screen and (width >= 80rem) {
+    padding: 2.5rem;
+    max-width: 30rem;
+    width: 100%;
+
+    & form {
+      & .inputs-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        & .input-container {
+          flex: 1;
+        }
+
+        & .input-container:last-child {
+          margin-top: initial;
+        }
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}

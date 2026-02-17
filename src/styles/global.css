@@ -100,6 +100,10 @@ body {
       background: url(../assets/icons/arrow-down.svg) no-repeat center;
       cursor: pointer;
     }
+
+    &::placeholder {
+      color: #98959d;
+    }
   }
 
   &:hover {
