@@ -165,6 +165,96 @@
       <div class="button-container">
         <button class="button" id="openModal">Novo agendamento</button>
       </div>
+
+      <dialog id="modal">
+        <img
+          src="./src/assets/icons/close.svg"
+          alt="fechar modal"
+          id="closeModal"
+        />
+        <form>
+          <header>
+            <h2>Agende um atendimento</h2>
+            <p>Preencha os dados do cliente para realizar o agendamento:</p>
+          </header>
+
+          <section class="fields">
+            <div class="input-container">
+              <label for="tutor-name">Nome do tutor</label>
+              <div class="input">
+                <i
+                  ><img src="./src/assets/icons/user.svg" alt="nome do tutor"
+                /></i>
+                <input
+                  type="text"
+                  id="tutor-name"
+                  name="tutor-name"
+                  placeholder="Helena Souza"
+                />
+              </div>
+            </div>
+
+            <div class="input-container">
+              <label for="pet-name">Nome do pet</label>
+              <div class="input">
+                <i
+                  ><img src="./src/assets/icons/pet-paw.svg" alt="nome do pet"
+                /></i>
+                <input
+                  type="text"
+                  id="pet-name"
+                  name="pet-name"
+                  placeholder="Cheddar"
+                />
+              </div>
+            </div>
+
+            <div class="input-container">
+              <label for="contact">Telefone</label>
+              <div class="input">
+                <i><img src="./src/assets/icons/phone.svg" alt="telefone" /></i>
+                <input
+                  type="text"
+                  id="contact"
+                  name="contact"
+                  placeholder="(00) 0 0000-0000"
+                />
+              </div>
+            </div>
+
+            <div class="textarea-container">
+              <label for="service">Descrição do serviço</label>
+              <textarea
+                id="service"
+                name="service"
+                placeholder="Banho e tosa"
+              ></textarea>
+            </div>
+
+            <div class="input-container">
+              <label for="schedule-date">Data</label>
+              <div class="input">
+                <i
+                  ><img src="./src/assets/icons/calendar.svg" alt="calendario"
+                /></i>
+                <input type="date" id="schedule-date" name="schedule-date" />
+              </div>
+            </div>
+
+            <div class="input-container">
+              <label for="schedule-hour">Hora</label>
+              <div class="input">
+                <i><img src="./src/assets/icons/clock.svg" alt="horário" /></i>
+                <input type="time" id="schedule-hour" name="schedule-hour" />
+              </div>
+            </div>
+          </section>
+
+          <button type="submit" class="button">Agendar</button>
+        </form>
+      </dialog>
     </div>
+
+    <script src="./src/main.js"></script>
   </body>
 </html>
