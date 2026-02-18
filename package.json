@@ -1,0 +1,14 @@
+{
+  "name": "mundopet",
+  "description": "Uma aplicação básica de agendamentos para serviços de pet shop",
+  "author": {
+    "name": "Matheus Alves Costa Santos",
+    "github": "https://github.com/Matheus-AlvesCS"
+  },
+  "scripts": {
+    "server": "json-server db.json --port 3333"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.6"
+  }
+}
