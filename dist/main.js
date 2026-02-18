@@ -9,6 +9,27 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/main.js"
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/styles/global.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _styles_modal_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/modal.css */ \"./src/styles/modal.css\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modal/toggle-modal.js */ \"./src/modules/modal/toggle-modal.js\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n\n\n//# sourceURL=webpack://mundopet/./src/main.js?\n}");
+
+/***/ },
+
+/***/ "./src/modules/modal/toggle-modal.js"
+/*!*******************************************!*\
+  !*** ./src/modules/modal/toggle-modal.js ***!
+  \*******************************************/
+() {
+
+eval("{const modal = document.getElementById(\"modal\");\nconst btnOpen = document.getElementById(\"openModal\");\nconst btnClose = document.getElementById(\"closeModal\");\nbtnOpen.onclick = () => modal.showModal();\nbtnClose.onclick = () => {\n  modal.classList.add(\"disappear\");\n  modal.addEventListener(\"animationend\", () => {\n    modal.classList.remove(\"disappear\");\n    modal.close();\n  }, {\n    once: true\n  });\n};\nmodal.addEventListener(\"cancel\", event => {\n  event.preventDefault();\n  btnClose.click();\n});\n\n//# sourceURL=webpack://mundopet/./src/modules/modal/toggle-modal.js?\n}");
+
+/***/ },
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/global.css"
 /*!*********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/global.css ***!
@@ -171,27 +192,6 @@ eval("{\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, ob
 
 "use strict";
 eval("{\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://mundopet/./node_modules/style-loader/dist/runtime/styleTagTransform.js?\n}");
-
-/***/ },
-
-/***/ "./src/main.js"
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/styles/global.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _styles_modal_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/modal.css */ \"./src/styles/modal.css\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modal/toggle-modal.js */ \"./src/modules/modal/toggle-modal.js\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n;\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://mundopet/./src/main.js?\n}");
-
-/***/ },
-
-/***/ "./src/modules/modal/toggle-modal.js"
-/*!*******************************************!*\
-  !*** ./src/modules/modal/toggle-modal.js ***!
-  \*******************************************/
-() {
-
-eval("{const modal = document.getElementById(\"modal\")\r\nconst btnOpen = document.getElementById(\"openModal\")\r\nconst btnClose = document.getElementById(\"closeModal\")\r\n\r\nbtnOpen.onclick = () => modal.showModal()\r\n\r\nbtnClose.onclick = () => {\r\n  modal.classList.add(\"disappear\")\r\n\r\n  modal.addEventListener(\r\n    \"animationend\",\r\n    () => {\r\n      modal.classList.remove(\"disappear\")\r\n\r\n      modal.close()\r\n    },\r\n    { once: true },\r\n  )\r\n}\r\n\r\nmodal.addEventListener(\"cancel\", (event) => {\r\n  event.preventDefault()\r\n\r\n  btnClose.click()\r\n})\r\n\n\n//# sourceURL=webpack://mundopet/./src/modules/modal/toggle-modal.js?\n}");
 
 /***/ },
 

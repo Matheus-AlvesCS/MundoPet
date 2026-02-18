@@ -17,7 +17,7 @@ export default {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "index.html"),
+      template: path.resolve(__dirname, "src", "index.html"),
     }),
     new CopyPlugin({
       patterns: [
@@ -33,7 +33,19 @@ export default {
     rules: [
       {
         test: /\.css$/i,
+        exclude: /node_modules/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.js$/i,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            targets: "defaults",
+            presets: [["@babel/preset-env"]],
+          },
+        },
       },
     ],
   },
