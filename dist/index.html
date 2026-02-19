@@ -192,6 +192,9 @@
                   placeholder="Helena Souza"
                 />
               </div>
+              <div class="error">
+                <img src="./assets/icons/warning-circle.svg" alt="erro" />
+              </div>
             </div>
 
             <div class="input-container">
@@ -250,7 +253,12 @@
                   <i
                     ><img src="./src/assets/icons/clock.svg" alt="horário"
                   /></i>
-                  <input type="time" id="schedule-hour" name="schedule-hour" />
+                  <input
+                    type="time"
+                    id="schedule-hour"
+                    name="schedule-hour"
+                    step="1800"
+                  />
                 </div>
               </div>
             </div>
@@ -260,7 +268,5 @@
         </form>
       </dialog>
     </div>
-
-    <script src="./src/main.js"></script>
   </body>
 </html>

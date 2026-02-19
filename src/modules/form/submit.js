@@ -1,4 +1,5 @@
 import dayjs from "dayjs"
+import { addFieldError } from "../../utils/add-field-error"
 
 const form = document.querySelector("form")
 const scheduleDate = document.getElementById("schedule-date")
@@ -19,22 +20,41 @@ form.addEventListener("submit", (event) => {
 
     const tutor_name = tutorName.value
     if (!tutor_name) {
-      return alert("Insira o nome do tutor.")
+      throw {
+        parentElement: tutorName.parentNode.parentNode,
+        message: "Insira o nome do tutor.",
+      }
     }
 
     const pet_name = petName.value
     if (!pet_name) {
-      return alert("Insira o nome do pet.")
+      throw {
+        parentElement: petName.parentNode.parentNode,
+        message: "Insira o nome do pet.",
+      }
     }
 
     const phone = contact.value
     if (!phone) {
-      return alert("Insira um telefone para contato.")
+      throw {
+        parentElement: contact.parentNode.parentNode,
+        message: "Insira um telefone para contato.",
+      }
     }
 
     const service_description = service.value
     if (!service_description) {
-      return alert("Descreva o serviço a ser realizado.")
+      throw {
+        parentElement: service.parentNode,
+        message: "Descreva o serviço a ser realizado.",
+      }
+    }
+
+    if (!scheduleDate.value || !scheduleHour.value) {
+      throw {
+        parentElement: scheduleDate.parentNode.parentNode.parentNode,
+        message: "Informe a data do agendamento por completo (Dia e horário).",
+      }
     }
 
     const [hour, minute] = scheduleHour.value.split(":").map(Number)
@@ -52,9 +72,6 @@ form.addEventListener("submit", (event) => {
       when,
     })
   } catch (error) {
-    alert(
-      "Não foi possível realizar o agendamento, tente novamente mais tarde.",
-    )
-    console.log(error)
+    addFieldError({ element: error.parentElement, message: error.message })
   }
 })
