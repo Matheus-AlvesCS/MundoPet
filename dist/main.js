@@ -16,7 +16,7 @@
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/styles/global.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _styles_modal_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/modal.css */ \"./src/styles/modal.css\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modal/toggle-modal.js */ \"./src/modules/modal/toggle-modal.js\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__);\n\n\n\n\n\n\n\n//# sourceURL=webpack://mundopet/./src/main.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/global.css */ \"./src/styles/global.css\");\n/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ \"./src/styles/main.css\");\n/* harmony import */ var _styles_modal_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/modal.css */ \"./src/styles/modal.css\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modal/toggle-modal.js */ \"./src/modules/modal/toggle-modal.js\");\n/* harmony import */ var _modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_modules_modal_toggle_modal_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _modules_page_load_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/page-load.js */ \"./src/modules/page-load.js\");\n/* harmony import */ var _modules_page_load_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_modules_page_load_js__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\n\n\n\n//# sourceURL=webpack://mundopet/./src/main.js?\n}");
 
 /***/ },
 
@@ -27,6 +27,16 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _st
 () {
 
 eval("{const modal = document.getElementById(\"modal\");\nconst btnOpen = document.getElementById(\"openModal\");\nconst btnClose = document.getElementById(\"closeModal\");\nbtnOpen.onclick = () => modal.showModal();\nbtnClose.onclick = () => {\n  modal.classList.add(\"disappear\");\n  modal.addEventListener(\"animationend\", () => {\n    modal.classList.remove(\"disappear\");\n    modal.close();\n  }, {\n    once: true\n  });\n};\nmodal.addEventListener(\"cancel\", event => {\n  event.preventDefault();\n  btnClose.click();\n});\n\n//# sourceURL=webpack://mundopet/./src/modules/modal/toggle-modal.js?\n}");
+
+/***/ },
+
+/***/ "./src/modules/page-load.js"
+/*!**********************************!*\
+  !*** ./src/modules/page-load.js ***!
+  \**********************************/
+() {
+
+eval("{addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"Página carregada!\");\n});\n\n//# sourceURL=webpack://mundopet/./src/modules/page-load.js?\n}");
 
 /***/ },
 
