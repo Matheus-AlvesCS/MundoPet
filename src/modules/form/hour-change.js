@@ -15,7 +15,17 @@ scheduleHour.addEventListener("change", () => {
     })
   }
 
-  if (minute % 30 !== 0) {
+  if (hour < 9) {
+    addFieldError({
+      element: scheduleHour.parentNode.parentNode.parentNode,
+      message: "O horário mínimo de agendamento é 09:00 horas.",
+    })
+  } else if (hour > 21) {
+    addFieldError({
+      element: scheduleHour.parentNode.parentNode.parentNode,
+      message: "O horário máximo de agendamento é 21:00 horas.",
+    })
+  } else if (minute % 30 !== 0) {
     addFieldError({
       element: scheduleHour.parentNode.parentNode.parentNode,
       message: `Os agendamentos ocorrem em intervalos de 30 minutos! (ex: ${hour}:00, ${hour}:30)`,
