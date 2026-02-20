@@ -1,5 +1,6 @@
 import dayjs from "dayjs"
 import { addFieldError } from "../../utils/add-field-error"
+import { scheduleCreate } from "../../services/schedule-create"
 
 const form = document.querySelector("form")
 const scheduleDate = document.getElementById("schedule-date")
@@ -63,14 +64,16 @@ form.addEventListener("submit", (event) => {
       .add(hour, "hour")
       .add(minute, "minute")
 
-    console.log({
+    const data = {
       id,
       tutor_name,
       pet_name,
       phone,
       service_description,
       when,
-    })
+    }
+
+    scheduleCreate(data)
   } catch (error) {
     addFieldError({ element: error.parentElement, message: error.message })
   }
