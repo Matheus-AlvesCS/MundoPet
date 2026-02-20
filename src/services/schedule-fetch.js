@@ -4,9 +4,9 @@ import { apiConfig } from "./api-config"
 export async function scheduleFetchByDay({ day }) {
   try {
     const response = await fetch(`${apiConfig.baseURL}/schedules`)
-    const data = await response.json()
+    const schedules = await response.json()
 
-    const dailySchedules = data.filter((schedule) =>
+    const dailySchedules = schedules.filter((schedule) =>
       dayjs(schedule.when).isSame(day, "day"),
     )
 
