@@ -7,7 +7,11 @@ import "./styles/main.css"
 import "./styles/modal.css"
 
 import "./modules/page-load.js"
+
 import "./modules/form/submit.js"
 import "./modules/form/hour-change.js"
 import "./modules/form/phone-mask.js"
+
+import "./modules/schedules/date-change.js"
+
 import "./modules/modal/toggle-modal.js"

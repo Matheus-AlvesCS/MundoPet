@@ -81,7 +81,20 @@ form.addEventListener("submit", async (event) => {
         message: "Agendamento realizado com sucesso!",
       })
     }
+
+    clearForm()
   } catch (error) {
     addFieldError({ element: error.parentElement, message: error.message })
   }
 })
+
+function clearForm() {
+  tutorName.value = ""
+  petName.value = ""
+  contact.value = ""
+  service.value = ""
+  scheduleDate.value = ""
+  scheduleHour.value = ""
+
+  tutorName.focus()
+}
