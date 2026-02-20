@@ -1,7 +1,9 @@
 import dayjs from "dayjs"
+
 import { addFieldError } from "../../utils/add-field-error"
 import { scheduleCreate } from "../../services/schedule-create"
 import { successMessage } from "../../utils/success-message"
+import { loadDailySchedules } from "../schedules/load"
 
 const form = document.querySelector("form")
 const scheduleDate = document.getElementById("schedule-date")
@@ -11,7 +13,10 @@ const petName = document.getElementById("pet-name")
 const contact = document.getElementById("contact")
 const service = document.getElementById("service")
 
-scheduleDate.min = dayjs().format("YYYY-MM-DD")
+const today = dayjs().format("YYYY-MM-DD")
+
+scheduleDate.value = today
+scheduleDate.min = today
 scheduleDate.max = dayjs().add(30, "day").format("YYYY-MM-DD")
 
 form.addEventListener("submit", async (event) => {
@@ -83,6 +88,7 @@ form.addEventListener("submit", async (event) => {
     }
 
     clearForm()
+    loadDailySchedules()
   } catch (error) {
     addFieldError({ element: error.parentElement, message: error.message })
   }

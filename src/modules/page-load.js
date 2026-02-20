@@ -7,5 +7,5 @@ const today = dayjs().format("YYYY-MM-DD")
 date.value = today
 
 addEventListener("DOMContentLoaded", () => {
-  loadDailySchedules({ day: date.value })
+  loadDailySchedules()
 })
