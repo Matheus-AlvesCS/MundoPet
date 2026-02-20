@@ -140,6 +140,19 @@ body {
   }
 }
 
+.success {
+  display: flex;
+  border: 1px solid #7ab317;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+
+  & > span {
+    font-size: 0.75rem;
+    color: #ffffff;
+  }
+}
+
 @media screen and (width >= 80rem) {
   #app {
     display: grid;

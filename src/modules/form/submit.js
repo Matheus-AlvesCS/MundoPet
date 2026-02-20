@@ -1,6 +1,7 @@
 import dayjs from "dayjs"
 import { addFieldError } from "../../utils/add-field-error"
 import { scheduleCreate } from "../../services/schedule-create"
+import { successMessage } from "../../utils/success-message"
 
 const form = document.querySelector("form")
 const scheduleDate = document.getElementById("schedule-date")
@@ -13,7 +14,7 @@ const service = document.getElementById("service")
 scheduleDate.min = dayjs().format("YYYY-MM-DD")
 scheduleDate.max = dayjs().add(30, "day").format("YYYY-MM-DD")
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault()
 
   try {
@@ -73,7 +74,13 @@ form.addEventListener("submit", (event) => {
       when,
     }
 
-    scheduleCreate(data)
+    const response = await scheduleCreate(data)
+    if (response) {
+      successMessage({
+        element: form.children[0],
+        message: "Agendamento realizado com sucesso!",
+      })
+    }
   } catch (error) {
     addFieldError({ element: error.parentElement, message: error.message })
   }
