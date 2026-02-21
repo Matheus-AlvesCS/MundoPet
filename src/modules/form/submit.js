@@ -4,6 +4,7 @@ import { addFieldError } from "../../utils/add-field-error"
 import { scheduleCreate } from "../../services/schedule-create"
 import { successMessage } from "../../utils/success-message"
 import { loadDailySchedules } from "../schedules/load"
+import { scheduleFetchByDay } from "../../services/schedule-fetch"
 
 const form = document.querySelector("form")
 const scheduleDate = document.getElementById("schedule-date")
@@ -79,12 +80,31 @@ form.addEventListener("submit", async (event) => {
       when,
     }
 
-    const response = await scheduleCreate(data)
-    if (response) {
-      successMessage({
-        element: form.children[0],
-        message: "Agendamento realizado com sucesso!",
-      })
+    const dailySchedules = await scheduleFetchByDay({
+      day: when.format("YYYY-MM-DD"),
+    })
+
+    const unavailableHours = dailySchedules.map((schedule) => schedule.when)
+    let availableToCreate = true
+
+    unavailableHours.forEach((hour) => {
+      if (dayjs(data.when).isSame(dayjs(hour))) {
+        availableToCreate = false
+
+        return alert(
+          "Esse horário já foi agendado por outra pessoa, por favor escolha outro.",
+        )
+      }
+    })
+
+    if (availableToCreate) {
+      const response = await scheduleCreate(data)
+      if (response) {
+        successMessage({
+          element: form.children[0],
+          message: "Agendamento realizado com sucesso!",
+        })
+      }
     }
 
     clearForm()
