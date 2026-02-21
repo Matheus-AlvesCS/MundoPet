@@ -9,8 +9,6 @@ allLists.forEach((list) => {
       const parentElement = event.target.parentNode
       const id = parentElement.dataset.id
 
-      console.log(id)
-
       if (id) {
         const confirmRemove = confirm(
           "Deseja realmente remover esse agendamento?",

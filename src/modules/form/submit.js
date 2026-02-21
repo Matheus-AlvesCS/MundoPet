@@ -5,6 +5,7 @@ import { scheduleCreate } from "../../services/schedule-create"
 import { successMessage } from "../../utils/success-message"
 import { loadDailySchedules } from "../schedules/load"
 import { scheduleFetchByDay } from "../../services/schedule-fetch"
+import { errorMessage } from "../../utils/error-message"
 
 const form = document.querySelector("form")
 const scheduleDate = document.getElementById("schedule-date")
@@ -91,9 +92,11 @@ form.addEventListener("submit", async (event) => {
       if (dayjs(data.when).isSame(dayjs(hour))) {
         availableToCreate = false
 
-        return alert(
-          "Esse horário já foi agendado por outra pessoa, por favor escolha outro.",
-        )
+        return errorMessage({
+          element: form.children[0],
+          message:
+            "Esse horário já foi agendado por outra pessoa, por favor escolha outro.",
+        })
       }
     })
 
@@ -105,10 +108,10 @@ form.addEventListener("submit", async (event) => {
           message: "Agendamento realizado com sucesso!",
         })
       }
-    }
 
-    clearForm()
-    loadDailySchedules()
+      clearForm()
+      loadDailySchedules()
+    }
   } catch (error) {
     addFieldError({ element: error.parentElement, message: error.message })
   }
