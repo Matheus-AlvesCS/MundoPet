@@ -24,7 +24,7 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault()
 
   try {
-    const id = new Date().getTime()
+    const id = String(new Date().getTime())
 
     const tutor_name = tutorName.value
     if (!tutor_name) {
@@ -119,7 +119,7 @@ function clearForm() {
   petName.value = ""
   contact.value = ""
   service.value = ""
-  scheduleDate.value = ""
+  scheduleDate.value = today
   scheduleHour.value = ""
 
   tutorName.focus()

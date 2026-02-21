@@ -13,5 +13,6 @@ import "./modules/form/hour-change.js"
 import "./modules/form/phone-mask.js"
 
 import "./modules/schedules/date-change.js"
+import "./modules/schedules/schedule-remove.js"
 
 import "./modules/modal/toggle-modal.js"

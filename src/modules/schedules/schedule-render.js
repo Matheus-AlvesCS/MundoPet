@@ -11,6 +11,7 @@ export function renderSchedules({ dailySchedules }) {
 
   dailySchedules.forEach((schedule) => {
     const newLi = document.createElement("li")
+    newLi.dataset.id = schedule.id
 
     const scheduleTime = document.createElement("strong")
     scheduleTime.textContent = dayjs(schedule.when).format("HH:mm")
@@ -27,7 +28,7 @@ export function renderSchedules({ dailySchedules }) {
 
     const removeLink = document.createElement("a")
     removeLink.textContent = "Remover agendamento"
-    removeLink.classList.add("link")
+    removeLink.classList.add("link", "cancel")
 
     petData.appendChild(name)
     newLi.append(scheduleTime, petData, service, removeLink)
